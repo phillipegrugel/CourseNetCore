@@ -1,14 +1,13 @@
 using System;
 
-namespace SmartSchool.Api.Dtos
+namespace SmartSchool.Api.V1.Dtos
 {
-    public class AlunoDto
+    public class ProfessorDto
     {
         public int Id { get; set; }
-        public int Matricula { get; set; }
+        public int Registro { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
-        public int Idade { get; set; }
         public DateTime DataIni { get; set; }
         public bool Ativo { get; set; }
     }

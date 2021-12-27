@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartSchool.Api</name>
+    </assembly>
+    <members>
+        <member name="T:SmartSchool.Api.V1.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.Api.V1.Controllers.AlunoController.Get">
+            <summary>
+            Método responsável para retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Api.V1.Controllers.AlunoController.GetRegisterDto">
+            <summary>
+            Método responsável por retornar apenas um único aluno
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Api.V1.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um único aluno
+            </summary>
+            <param name="id">Id do aluno</param>
+            <returns></returns>
+        </member>
+        <member name="T:SmartSchool.Api.V2.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.Api.V2.Controllers.AlunoController.Get">
+            <summary>
+            Método responsável para retornar todos os alunos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.Api.V2.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um único aluno
+            </summary>
+            <param name="id">Id do aluno</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

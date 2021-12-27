@@ -4,13 +4,14 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.Api.Data;
-using SmartSchool.Api.Dtos;
+using SmartSchool.Api.V1.Dtos;
 using SmartSchool.Api.Models;
 
-namespace SmartSchool.Api.Controllers
+namespace SmartSchool.Api.V1.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repository;
@@ -22,6 +23,7 @@ namespace SmartSchool.Api.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
         public IActionResult Get()
         {
             var result = _repository.GetAllProfessores(true);
