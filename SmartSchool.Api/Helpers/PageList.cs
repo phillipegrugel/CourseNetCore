@@ -24,8 +24,10 @@ namespace SmartSchool.Api.Helpers
 
         public static async Task<PageList<T>> CreateAsync(IQueryable<T> source, int pageNumber, int pageSize)
         {
+            var skipCount = pageNumber > 0 ? (pageNumber-1) * pageSize : 0;
+
             var count = await source.CountAsync();
-            var items = await source.Skip((pageNumber-1) * pageSize)
+            var items = await source.Skip(skipCount)
                                     .Take(pageSize)
                                     .ToListAsync();
             return new PageList<T>(items, count, pageNumber, pageSize);
