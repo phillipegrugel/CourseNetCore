@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using SmartSchool.Api.Data;
 using SmartSchool.Api.V1.Dtos;
 using SmartSchool.Api.Models;
+using System.Threading.Tasks;
+using SmartSchool.Api.Helpers;
 
 namespace SmartSchool.Api.V1.Controllers
 {
@@ -31,11 +33,15 @@ namespace SmartSchool.Api.V1.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get([FromQuery]PageParams pageParams)
         {
-            var result = _repository.GetAllAlunos(true);
+            var result = await _repository.GetAllAlunosAsync(pageParams, true);
 
-            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(result));
+            var alunosResult = _mapper.Map<IEnumerable<AlunoDto>>(result);
+
+            Response.AddPagination(result.CurrentPage, result.PageSize, result.TotalCont, result.TotalPages);
+
+            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunosResult));
         }
 
         /// <summary>
